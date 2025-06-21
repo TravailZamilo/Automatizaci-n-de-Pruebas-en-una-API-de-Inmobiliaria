@@ -4,8 +4,8 @@
   "description": "API REST básica de inmobiliaria con pruebas automatizadas",
   "main": "src/app.js",
   "scripts": {
-    "start": "node src/app.js",
-    "test": "jest"
+  "start": "node src/server.js",
+  "test": "jest"
   },
   "keywords": [],
   "author": "",
