@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
+
 const inmuebles = [
   { id: 1, direccion: 'Calle 123', precio: 150000, tipo: 'Apartamento' },
   { id: 2, direccion: 'Avenida 456', precio: 230000, tipo: 'Casa' },
@@ -9,6 +12,10 @@ const inmuebles = [
 
 app.get('/api/inmuebles', (req, res) => {
   res.json(inmuebles);
+});
+
+app.get('/', (req, res) => {
+  res.render('index', { inmuebles });
 });
 
 module.exports = app;

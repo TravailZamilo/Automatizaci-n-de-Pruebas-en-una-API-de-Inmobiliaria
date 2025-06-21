@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Inmobiliaria</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f6fa;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #2f3640;
+      margin-bottom: 30px;
+    }
+    table {
+      width: 80%;
+      margin: auto;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th {
+      background: #44bd32;
+      color: #fff;
+      padding: 12px 15px;
+    }
+    td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #ddd;
+    }
+    tr:hover {
+      background: #f1f2f6;
+    }
+    @media (max-width: 600px) {
+      table, th, td {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Listado de Inmuebles</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Dirección</th>
+        <th>Precio</th>
+        <th>Tipo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% inmuebles.forEach(i => { %>
+        <tr>
+          <td><%= i.id %></td>
+          <td><%= i.direccion %></td>
+          <td>$<%= i.precio.toLocaleString() %></td>
+          <td><%= i.tipo %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>
